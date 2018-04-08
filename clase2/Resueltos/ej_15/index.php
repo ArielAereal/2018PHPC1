@@ -1,21 +1,33 @@
 <?php
 
-require_once "clases.php";
+
+/* Notas del ejercicio:
+
+faltan datos para calcular el perímetro de un triángulo
+
+el método Dibujar muestra pero no retorna un string */
+
+include "entidades/figurageometrica.php";
+include "entidades/rectangulo.php";
+include "entidades/triangulo.php";
 
 
- $figuna = new Rectangulo();
+ $figuna = new Rectangulo(3,7);
 
-var_dump($figuna);
+echo "<pre>";
 
+ $figuna->setcolor("yellow");
 
-$figuna->setcolor("Amarillo");
-
-echo $figuna->getcolor();
-
+ // valores de base: 2,3,5
+ // valores de altura: 2,3
+$figdos = new Triangulo(5,3);
+$figdos->setcolor("violet");
+echo "RECTÁNGULO<br>";
 echo $figuna->tostring();
-
-$figdos = new Triangulo();
-
-var_dump($figdos);
+echo "<BR>TRIÁNGULO<BR>";
+echo $figdos->tostring();
+echo "</pre>";
+$figuna->Dibujar();
+$figdos->Dibujar();
 
 ?>
