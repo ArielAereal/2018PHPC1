@@ -20,11 +20,15 @@ class Fabrica{
     
     public function getcantMaxOperarios(){return $this->_cantMaxOperarios;}
     
+    public function getrazonSocial(){return $this->_razonSocial;}
 
     private function RetornarCostos(){
 
         $gasto = 0;
-        if(count($this->getoperarios()==null))
+
+        
+
+        if(count($this->getoperarios())==null)
         {
             echo "Sin operarios";
         } else {
@@ -38,19 +42,20 @@ class Fabrica{
     }
 
     private function MostrarOperarios(){
-        if(count($this->getoperarios()==null))
+        
+        if(count($this->getoperarios())==null)
         {
             echo "Sin operarios";
         } else {
             foreach ($this->getoperarios() as $key => $value) {
                 
-               echo Operario::Mostrar($value);
+               echo Operario::MostrarO($value);
             }
         }
     }
 
     public static function MostrarCosto($fabric){
-        echo $fabric->RetornarCostos();
+        echo "Costo Total en empleados: " . $fabric->RetornarCostos();
     }
 
     public static function Equals($fabrica,$empleado){
@@ -106,6 +111,16 @@ class Fabrica{
 
             return false;
 
+    }
+
+    public static function MostrarFabrica($unafabrica){
+        $salida="<br><br>";
+        $salida = $salida ."Razón Social: " . $unafabrica->getrazonSocial()."<br><br>";
+        $salida = $salida . "Cantidad Máxima de Operarios: ". $unafabrica->getcantMaxOperarios() . "<br><br>";
+        echo "<br><br>Listado de Operarios: <br><br>";
+        $unafabrica->MostrarOperarios();        
+        
+        return $salida;
     }
 
 

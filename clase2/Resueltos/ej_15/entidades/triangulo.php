@@ -25,30 +25,34 @@ class Triangulo extends FiguraGeometrica
     // dibuja pero no retorna
     public function Dibujar(){
 
-        echo "<font color='".$this->getcolor()."'>";
+        $salida ="";
+
+        $salida = $salida .  "<font color='".$this->getcolor()."'>";
         if($this->_altura == 2)
         {
-            echo "_*_"."<br>";
+            $salida = $salida .  "_*_"."<br>";
             if($this->_base == 2)
             {
 
-                echo "**_";
+                $salida = $salida .  "**_";
             }elseif($this->_base == 3)
             {
-                echo "***";
+                $salida = $salida .  "***";
             }
             
         }else{
             if($this->_altura == 3)
             {
-                echo "__*__"."<br>";
-                echo "_***_"."<br>";
+                $salida = $salida .  "__*__"."<br>";
+                $salida = $salida .  "_***_"."<br>";
             } if($this->_base == 5)
             {
-                echo "*****";
+                $salida = $salida .  "*****";
             }
         }
-        echo "</font>";
+        $salida = $salida .  "</font>";
+
+        return $salida;
     }
 
     public function ToString(){

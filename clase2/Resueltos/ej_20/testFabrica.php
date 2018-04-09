@@ -15,6 +15,8 @@ $opuno->setaumentarsalario(5);
 
 $opdos->setsalario(15000);
 
+echo "No se puede redeclarar el método Mostrar";
+
 echo Operario::MostrarO($opuno);
 
 $fabrica = new Fabrica("Los Lope");
@@ -35,7 +37,10 @@ $fabrica->Add(new Operario(15462,"Gutierrez","Mariano"));
 $fabrica->Add(new Operario(22486,"Aguayo","María"));
 $fabrica->Add(new Operario(22486,"Savala","Santiago"));
 
+echo Fabrica::MostrarFabrica($fabrica);
 
+echo Fabrica::MostrarCosto($fabrica);
+/*
 echo "<pre>";
 var_dump($fabrica);
 echo "</pre>";
@@ -47,5 +52,5 @@ $fabrica->Remove($bur);
 
 echo "<pre>";
 var_dump($fabrica);
-echo "</pre>";
+echo "</pre>";*/
 ?>

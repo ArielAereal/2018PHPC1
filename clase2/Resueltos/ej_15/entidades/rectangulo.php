@@ -20,19 +20,23 @@ class Rectangulo extends FiguraGeometrica
         
         // me cuesta que retorne el dibujo, 
         // ver la funcion array to string o algo así.
-        //$dibujo = array();
+        
+
+        $salida ="";
+
         for ($i=0; $i < $this->_ladoUno; $i++) { 
             for ($j=0; $j < $this->_ladoDos ; $j++) { 
                 
           //      $dibujo[] = "*";
-            echo "<font color='".$this->getcolor()."'>*";
+            $salida = $salida . "<font color='".$this->getcolor()."'>*";
             }
 
             //$dibujo[]= "<br>";
-            echo "<br>";
+            $salida = $salida . "<br>";
         }
-        echo "</font>";
+        $salida = $salida . "</font>";
         
+        return $salida;
     }
     
     protected function CalcularDatos(){

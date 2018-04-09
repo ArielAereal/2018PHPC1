@@ -27,7 +27,7 @@ echo $figuna->tostring();
 echo "<BR>TRIÁNGULO<BR>";
 echo $figdos->tostring();
 echo "</pre>";
-$figuna->Dibujar();
-$figdos->Dibujar();
+echo $figuna->Dibujar();
+echo $figdos->Dibujar();
 
 ?>

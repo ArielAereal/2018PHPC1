@@ -59,7 +59,7 @@ class Operario{
 
     public static function MostrarO($operario){
 
-        echo "No se puede redeclarar el método Mostrar";
+        
        return  $operario->Mostrar();       
 
     }
